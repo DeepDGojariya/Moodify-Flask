@@ -1,0 +1,95 @@
+{%block head %}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Moodify</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="{{url_for('static',filename='logo.png')}}" type="image/png">
+  <style>
+body{    
+    background-color:steelblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(14, 13, 13);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+.main{
+    margin-top: 30px;
+    height: 800px;
+}
+.navbar_color{
+    color: aqua;
+}
+.navbar nav a:hover{
+    color:black;
+    background-color: aqua;
+    border-radius: 3.5px;
+    padding:5px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 
+}
+
+  </style>
+</head>
+
+
+<header class="text-gray-600 body-font navbar">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M22 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        
+      </svg>
+      <a href="{{url_for("index")}}"><span class="ml-3 text-xl navbar_color">Moodify</span></a>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5  navbar_color" href="{{url_for("capture")}}">Check Your Mood</a>
+      <a class="mr-5  navbar_color" href="{{url_for("about")}}">About</a>
+    </nav>
+  </div>
+</header>
+{% endblock %}
+{%block body%}
+{% endblock %}
+
+{%block footer%}
+<footer class="text-gray-700 body-font mt-0 footer">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+
+    <p class="text-sm text-black-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4" style="color:black"><b>© 2021 Designed & Developed By Deep Gojariya</b>
+
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-black-500" href="https://www.facebook.com/deep.gojariya.9" target="_blank">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" style="color:lightcyan"></path>
+        </svg>
+      </a>
+
+      <a class="ml-3 text-black-500" href="https://www.linkedin.com/in/deep-gojariya-b8a8a3199/?originalSubdomain=in" target="_blank">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" style="color:lightcyan"></path>
+          <circle cx="4" cy="4" r="2" stroke="none" style="color:lightcyan"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+{% endblock %}
